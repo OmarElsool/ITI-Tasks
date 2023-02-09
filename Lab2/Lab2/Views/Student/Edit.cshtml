@@ -1,0 +1,25 @@
+﻿@model Student
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <input type="hidden" value="@Model.Id" /><br />
+        <label asp-for="Username">Username</label>
+        <input asp-for="Username" value="@Model.Username"/>
+        <span asp-validation-for="Username"></span><br />
+        <partial name="StudentForm" />
+        <input type="submit" value="Submit" />
+    </form>
+    @section scripts{
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

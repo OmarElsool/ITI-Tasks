@@ -1,0 +1,36 @@
+﻿@model Student
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <form asp-action="Create" enctype="multipart/form-data" class="form-control">
+        <div asp-validation-summary="ModelOnly"></div>
+        <partial name="StudentForm" />
+        <br />
+        <label asp-for="Username">Username</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username"></span><br />
+        <label asp-for="StdImg"></label>
+        <input asp-for="StdImg" type="file" name="img" /> 
+        <span asp-validation-for="StdImg"></span><br />
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span><br />
+        <label asp-for="CPassword">Confirm Password</label>
+        <input asp-for="CPassword" type="password" />
+        <span asp-validation-for="CPassword"></span><br />
+        <input type="submit" value="Submit" />
+    </form>
+    @section scripts{
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

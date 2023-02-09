@@ -1,0 +1,33 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "ShowStudents";
+
+}
+
+<h1>Show Courses</h1>
+<table class="table">
+    <form method="post">
+     <input type="hidden" value="@Model.CrsId" name="crsid" />
+    <tbody>
+    @foreach (var dept in Model.Departments)
+    {
+        <h1 class="alert alert-info">@dept.Name</h1>
+        <ul>
+        @foreach (var std in dept.Students)
+        {
+            <li>@std.Name</li>
+            if(std.StudentCrs.Count() == 0){
+                <input type="text" name="std.@std.Id" value="-1" />
+            }
+            foreach (var degree in std.StudentCrs)
+            {
+                <input type="text" name="std.@std.Id" value="@(degree.Degree)" />
+            }
+        }
+        </ul>
+    }
+    </tbody>
+    <input type="submit" value="Update Student" class="btn btn-primary"/>
+    </form>
+</table>

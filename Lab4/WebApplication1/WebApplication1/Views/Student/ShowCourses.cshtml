@@ -1,0 +1,36 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "ShowCourses";
+}
+
+<h1>ShowCourses</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.Courses)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model.Department.Courses) {
+    <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+    </tr>
+    }
+    @foreach (var dgre in Model.StudentCrs) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => dgre.Degree)
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>

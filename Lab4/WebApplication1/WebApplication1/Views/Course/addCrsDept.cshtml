@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication1.Models.Course>
+
+@{
+    ViewData["Title"] = "addCrsDept";
+}
+
+<h1>addCrsDept</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    <form asp-action="addCrsDept">
+@*        <div class="form-group">
+            <select  class="form-control" asp-items="ViewBag.Department"></select>
+        </div>
+        <div class="form-group">
+            <select name="Course" class ="form-control" asp-items="ViewBag.Course"></select>
+        </div>*@
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>

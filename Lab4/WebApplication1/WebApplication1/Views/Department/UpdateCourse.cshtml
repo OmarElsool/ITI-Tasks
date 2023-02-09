@@ -1,0 +1,20 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "UpdateCourse";
+}
+
+<h1>UpdateCourse</h1>
+
+<form method="post">
+    <input type="hidden" value="@Model.DeptId" name="Id" />
+    <div class="mb-4">
+        <h1 class="alert alert-success">Courses In Department</h1>
+        <select multiple name="courseToRemove" asp-items="@ViewBag.CourseInDept" class="form-select"></select>
+    </div>
+    <div >
+        <h1 class="alert alert-danger">Courses Not In Department</h1>
+        <select multiple name="courseToAdd" asp-items="@ViewBag.CourseNotInDept" class="form-select"></select>
+    </div>
+    <input type="submit" value="sumbit" class="btn btn-primary"/>
+</form>
+<a href="/Department"> <--Go Back </a>
